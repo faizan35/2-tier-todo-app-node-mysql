@@ -6,10 +6,10 @@ const port = 3000;
 
 // MySQL Connection
 const db = mysql.createConnection({
-  host: "db",
-  user: "root",
-  password: "your_password",
-  database: "todo_app",
+  host: process.env.MYSQL_HOST || "localhost",
+  user: process.env.MYSQL_USER || "root",
+  password: process.env.MYSQL_PASSWORD || "your_password",
+  database: process.env.MYSQL_DATABASE || "todo_app",
 });
 
 db.connect((err) => {

@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    depends_on: -db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: your_password
+      MYSQL_DATABASE: todo_app
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: your_password
+      MYSQL_DATABASE: todo_app
+    ports:
+      - "3306:3306"
