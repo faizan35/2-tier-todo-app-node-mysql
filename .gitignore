@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# Docker
+.docker/
+
+
+
+# Local environment files
+.env
