@@ -27,18 +27,29 @@ This is a simple two-tier todo application with a frontend built using HTML, CSS
 3. Set up the MySQL database:
 
    - Create a database named `todo_app`.
-   - Run the SQL script in `database.sql` to create the `tasks` table.
+   - Run the SQL script in `database\tasks.sql` to create the `tasks` table.
 
-4. Update MySQL connection details:
+4. Create a `.env` file in the project dir.
 
-   Open `server.js` and update the MySQL connection details (host, user, password) to match your MySQL setup.
+   ```bash
+   touch .env
+   ```
+
+5. Open the .env file and add your MySQL configuration:
+
+   ```bash
+   MYSQL_HOST=mysql
+   MYSQL_USER=your_username
+   MYSQL_PASSWORD=your_password
+   MYSQL_DB=your_database
+   ```
 
 ### Usage
 
 1. Start the Node.js server:
 
    ```bash
-   node server.js
+   node backend/server.js
    ```
 
 2. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access the todo app.
@@ -47,6 +58,7 @@ This is a simple two-tier todo application with a frontend built using HTML, CSS
 
 - Add tasks
 - Fetch tasks from the MySQL database
+- Delete task **<--- In progress --->**
 
 ## Contributing
 

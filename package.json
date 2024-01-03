@@ -1,15 +1,25 @@
 {
-  "name": "todo-app",
+  "name": "2-tier-todo-app-node-mysql",
   "version": "1.0.0",
-  "description": "This is a simple two-tier todo application with a frontend built using HTML, CSS, and JavaScript, and a backend using Node.js, Express, and MySQL.",
+  "description": "Simple two-tier web app with HTML, CSS, JS frontend for user interaction, Node.js backend, and MySQL for task management.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faizan35/2-tier-todo-app-node-mysql.git"
+  },
+  "author": "Faizan_Ansari",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/faizan35/2-tier-todo-app-node-mysql/issues"
+  },
+  "homepage": "https://github.com/faizan35/2-tier-todo-app-node-mysql#readme",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mysql": "^2.18.1"
+    "mysql2": "^3.6.5"
   }
 }
