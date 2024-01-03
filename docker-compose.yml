@@ -6,8 +6,8 @@ services:
     build: . # Build the Docker image from the current directory (assumes a Dockerfile is present)
     ports:
       - "3000:3000" # Map port 3000 on the host to port 3000 on the container
-    # depends_on:
-    #   - mysql # Ensure that the node-app service starts after the mysql service
+    depends_on:
+      - mysql # Ensure that the node-app service starts after the mysql service
     links:
       - mysql # Establish a link between the node-app service and the mysql service
     # environment:
@@ -32,8 +32,6 @@ services:
     volumes:
       - ./database/tasks.sql:/docker-entrypoint-initdb.d/tasks.sql # Mount the local tasks.sql file into the container's initialization directory
       - mysql-data:/var/lib/mysql # Define a named volume (mysql-data) for persisting MySQL data
-    depends_on:
-      - node-app
 
 # Define a named volume for MySQL data persistence
 volumes:
