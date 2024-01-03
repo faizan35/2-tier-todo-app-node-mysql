@@ -2,8 +2,8 @@
 # FROM node:14-alpine
 FROM node:16.14
 
-# Update npm to version 10.2.5
-RUN npm install -g npm@10.2.5
+# # Update npm to version 10.2.5
+# RUN npm install -g npm@10.2.5
 
 
 # Set the working directory in the container
