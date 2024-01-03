@@ -19,11 +19,13 @@ services:
   # MySQL Database Service
   mysql:
     image: mysql:latest # Use the latest MySQL Docker image
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: todo_app
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
+    # environment:
+    #   MYSQL_ROOT_PASSWORD: root
+    #   MYSQL_DATABASE: todo_app
+    #   MYSQL_USER: admin
+    #   MYSQL_PASSWORD: admin
+    env_file:
+      - .env # Load environment variables from .env file
     ports:
       - "3306:3306" # Map port 3306 on the host to port 3306 on the container
     volumes:
