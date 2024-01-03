@@ -16,6 +16,8 @@ services:
     #   MYSQL_DB: todo_app
     env_file:
       - .env # Load environment variables from .env file
+    networks:
+      - todo-network
 
   # MySQL Database Service
   mysql:
@@ -31,7 +33,13 @@ services:
     volumes:
       - ./database/tasks.sql:/docker-entrypoint-initdb.d/tasks.sql # Mount the local tasks.sql file into the container's initialization directory
       - mysql-data:/var/lib/mysql # Define a named volume (mysql-data) for persisting MySQL data
+    networks:
+      - todo-network
 
 # Define a named volume for MySQL data persistence
 volumes:
   mysql-data:
+
+# Define a custom network
+networks:
+  todo-network:
