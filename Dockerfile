@@ -1,6 +1,6 @@
 # Use a smaller Node.js base image
 # FROM node:14-alpine
-FROM node:14
+FROM node:16.14
 
 
 # Set the working directory in the container
