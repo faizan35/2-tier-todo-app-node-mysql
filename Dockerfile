@@ -12,9 +12,10 @@ RUN npm install \
     && npm cache clean --force \
     && rm -rf /var/lib/apt/lists/* /var/cache/apk/*
 
-# Copy the frontend and backend code to the container
+# Copy the frontend, backend and database code to the container
 COPY frontend/ ./frontend
 COPY backend/ ./backend
+COPY database/ ./database
 
 # Expose the port for the application (adjust if needed)
 EXPOSE 3000
