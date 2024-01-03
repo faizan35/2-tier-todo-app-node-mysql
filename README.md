@@ -14,7 +14,10 @@ This is a simple two-tier todo application with a frontend built using HTML, CSS
 1. Clone the repository:
 
    ```bash
-   git clone <repo-link>
+   git clone https://github.com/faizan35/2-tier-todo-app-node-mysql.git
+   ```
+
+   ```bash
    cd 2-tier-todo-app-node-mysql
    ```
 
