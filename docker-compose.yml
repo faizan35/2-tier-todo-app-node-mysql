@@ -10,22 +10,23 @@ services:
       - mysql # Ensure that the node-app service starts after the mysql service
     links:
       - mysql # Establish a link between the node-app service and the mysql service
-    environment:
-      MYSQL_HOST: root
-      MYSQL_USER: admin
-      MYSQL_PASSWORD: admin
-      MYSQL_DB: todo_app
+    # environment:
+    #   MYSQL_HOST: root
+    #   MYSQL_USER: admin
+    #   MYSQL_PASSWORD: admin
+    #   MYSQL_DB: todo_app
+    env_file:
+      - .env # Load environment variables from .env file
 
   # MySQL Database Service
   mysql:
     image: mysql:latest # Use the latest MySQL Docker image
-    # environment:
-    #   MYSQL_ROOT_PASSWORD: root
-    #   MYSQL_DATABASE: todo_app
-    #   MYSQL_USER: admin
-    #   MYSQL_PASSWORD: admin
-    env_file:
-      - .env # Load environment variables from .env file
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: todo_app
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+
     ports:
       - "3306:3306" # Map port 3306 on the host to port 3306 on the container
     volumes:
