@@ -32,6 +32,8 @@ services:
     volumes:
       - ./database/tasks.sql:/docker-entrypoint-initdb.d/tasks.sql # Mount the local tasks.sql file into the container's initialization directory
       - mysql-data:/var/lib/mysql # Define a named volume (mysql-data) for persisting MySQL data
+    depends_on:
+      - node-app
 
 # Define a named volume for MySQL data persistence
 volumes:
