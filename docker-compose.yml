@@ -6,8 +6,8 @@ services:
     build: . # Build the Docker image from the current directory (assumes a Dockerfile is present)
     ports:
       - "3000:3000" # Map port 3000 on the host to port 3000 on the container
-    depends_on:
-      - mysql # Ensure that the node-app service starts after the mysql service
+    # depends_on:
+    #   - mysql # Ensure that the node-app service starts after the mysql service
     links:
       - mysql # Establish a link between the node-app service and the mysql service
     # environment:
