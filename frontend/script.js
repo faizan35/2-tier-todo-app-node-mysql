@@ -34,7 +34,9 @@ async function addTask() {
 
   if (newTaskText !== "") {
     try {
-      const response = await fetch("http://localhost:3000/tasks", {
+      const response = await fetch("http://node-app:3000/api/tasks", {
+        // for docker
+        // const response = await fetch("http://localhost:3000/tasks", {   // for local setup
         method: "POST",
         headers: {
           "Content-Type": "application/json",
