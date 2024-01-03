@@ -54,6 +54,12 @@ This is a simple two-tier todo application with a frontend built using HTML, CSS
 
 2. Open your browser and go to [http://localhost:3000](http://localhost:3000) to access the todo app.
 
+---
+
+### Docker
+
+---
+
 ## Features
 
 - Add tasks
