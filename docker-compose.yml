@@ -8,8 +8,7 @@ services:
       - "3000:3000" # Map port 3000 on the host to port 3000 on the container
     depends_on:
       - mysql # Ensure that the node-app service starts after the mysql service
-    links:
-      - mysql # Establish a link between the node-app service and the mysql service
+
     # environment:
     #   MYSQL_HOST: root
     #   MYSQL_USER: admin
