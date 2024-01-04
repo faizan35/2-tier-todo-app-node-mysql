@@ -3,21 +3,20 @@ version: "3"
 services:
   # Node.js Application Service
   node-app:
-    build: . # Build the Docker image from the current directory (assumes a Dockerfile is present)
+    build:
+      context: . # Build the Docker image from the current directory (assumes a Dockerfile is present)
     ports:
       - "3000:3000" # Map port 3000 on the host to port 3000 on the container
     depends_on:
       - mysql # Ensure that the node-app service starts after the mysql service
 
-    # environment:
-    #   MYSQL_HOST: root
-    #   MYSQL_USER: admin
-    #   MYSQL_PASSWORD: admin
-    #   MYSQL_DB: todo_app
-    env_file:
-      - .env # Load environment variables from .env file
-    networks:
-      - todo-network
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_DB: todo_app
+    # env_file:
+    #   - .env # Load environment variables from .env file
 
   # MySQL Database Service
   mysql:
@@ -33,13 +32,7 @@ services:
     volumes:
       - ./database/tasks.sql:/docker-entrypoint-initdb.d/tasks.sql # Mount the local tasks.sql file into the container's initialization directory
       - mysql-data:/var/lib/mysql # Define a named volume (mysql-data) for persisting MySQL data
-    networks:
-      - todo-network
 
 # Define a named volume for MySQL data persistence
 volumes:
   mysql-data:
-
-# Define a custom network
-networks:
-  todo-network:
