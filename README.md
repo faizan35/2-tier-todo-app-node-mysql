@@ -9,7 +9,7 @@ This is a simple two-tier todo application with a frontend built using HTML, CSS
 - Node.js installed
 - MySQL server installed and running
 
-### Installation
+### Installation - Local Setup
 
 1. Clone the repository:
 
@@ -59,7 +59,27 @@ This is a simple two-tier todo application with a frontend built using HTML, CSS
 
 ---
 
-### Docker
+### Installation - Docker
+
+1. Open your root dir of the project
+
+   ```bash
+   cd 2-tier-todo-app-node-mysql
+   ```
+
+2. Install docker and docker-compose
+
+   ```bash
+   sudo apt install docker.io -y
+   ```
+
+   ```bash
+   sudo apt install docker-compose -y
+   ```
+
+3. Add docker to group
+4. docker build -t todo_app .
+5. docker-compose up -d
 
 ---
 
